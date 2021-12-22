@@ -1,22 +1,11 @@
-FROM node:alpine
+FROM nginx:alpine
 
 RUN apk update
-RUN apk add nginx
-RUN apk add openrc
+RUN apk add --update npm
 
-# add /app/node_modules/.bin to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
-ENV NODE_OPTIONS --openssl-legacy-provider
 
-RUN mkdir -p /build
+RUN mkdir -p /src
 
-COPY build.sh /bin
-RUN mv /bin/build.sh /bin/build
-
-COPY default.conf /etc/nginx/http.d/
-
-RUN openrc
-RUN touch /run/openrc/softlevel
-RUN rc-service nginx start
-
-# RUN cat /etc/nginx/http.d/default.conf
+COPY build.sh /bin/build
+RUN chmod +x /bin/build

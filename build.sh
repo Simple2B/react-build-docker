@@ -1,19 +1,16 @@
 #!/bin/sh
 
-cd /build
+echo "Moving to /build"
+cd /src
 
-# echo "Install packages"
-# npm install
+echo "Install packages"
+npm install
 
-# echo "Build static"
-# npm run build
+echo "Build static"
+npm run build
 
-# echo "Move static to Nginx"
-# mv -rp /build/build/* /var/www/localhost/
+echo "Move static to Nginx"
+mv /src/build/* /usr/share/nginx/html
 
-openrc
-touch /run/openrc/softlevel
-# lsof -i -P -n | grep LISTEN
-# rc-service nginx start
-
-/etc/init.d/nginx start
+echo "Done"
+rm -rf /src

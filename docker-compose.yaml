@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  frontend:
+  react_build:
     image: istacat/react_build_deploy:latest
     build:
       context: .
