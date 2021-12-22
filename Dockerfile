@@ -5,6 +5,8 @@ RUN apk add --update npm
 
 ENV PATH /app/node_modules/.bin:$PATH
 
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 RUN mkdir -p /src
 
 COPY build.sh /bin/build
