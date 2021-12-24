@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Moving to /build"
+echo "Moving to /src"
 cd /src
 
 echo "Install packages"
