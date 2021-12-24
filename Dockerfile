@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 RUN apk update
-RUN apk add --update npm
+RUN apk add --update yarn
 
 ENV PATH /app/node_modules/.bin:$PATH
 

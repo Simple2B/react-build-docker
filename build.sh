@@ -4,13 +4,15 @@ echo "Moving to /build"
 cd /src
 
 echo "Install packages"
-npm install
+yarn install
 
 echo "Build static"
-npm run build
+yarn run build
 
 echo "Move static to Nginx"
 mv /src/build/* /usr/share/nginx/html
 
-echo "Done"
+echo "Cleaning..."
 rm -rf /src
+
+echo "Done"
