@@ -4,7 +4,7 @@ echo "Moving to /src"
 cd /src
 
 echo "Install packages"
-yarn install
+yarn install --frozen-lockfile
 
 echo "Build static"
 yarn run build
