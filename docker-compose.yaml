@@ -1,6 +1,6 @@
 version: "3.8"
 services:
   react_build:
-    image: simple2b/react_build_deploy:latest
+    image: simple2b/react_build
     build:
       context: .

@@ -1,16 +1,18 @@
 #!/bin/sh
 
-echo "Moving to /build"
+echo "Moving to /src"
 cd /src
 
 echo "Install packages"
-npm install
+yarn install --frozen-lockfile
 
 echo "Build static"
-npm run build
+yarn run build
 
 echo "Move static to Nginx"
 mv /src/build/* /usr/share/nginx/html
 
-echo "Done"
+echo "Cleaning..."
 rm -rf /src
+
+echo "Done"
